@@ -21,13 +21,15 @@ const layers = [layer5, layer6];
 export default function Parallax(data) {
     const storedState = localStorage.getItem("loaded");
     console.log(!!storedState);
-    const [loadedImages, setLoadedImages] = useState(0);
+    // const [loadedImages, setLoadedImages] = useState(0);
     const [loaded, setLoaded] = useState(!!storedState);
 
-    function handleLoad() {
-        setLoadedImages((prev) => prev + 1);
-        console.log(loaded);
-    }
+    // function handleLoad() {
+    //     setLoadedImages((prev) => prev + 1);
+    //     console.log(loaded);
+    // }
+
+    const loadedImages= 0;
 
     useEffect(() => {
         if (loadedImages > 6) {
@@ -153,7 +155,7 @@ export default function Parallax(data) {
                 onLoad={handleLoad}
                 alt="a"
             /> */}
-            {loaded && data.startOnce == false ? (
+            {loaded && data.startOnce === false ? (
                 <MouseParallaxContainer
                     globalFactorX={0.3}
                     globalFactorY={0.3}
